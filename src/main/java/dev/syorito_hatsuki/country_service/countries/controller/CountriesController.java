@@ -4,8 +4,6 @@ import dev.syorito_hatsuki.country_service.api.model.countries.response.Countrie
 import dev.syorito_hatsuki.country_service.api.model.countries.response.CountryInfo;
 import dev.syorito_hatsuki.country_service.api.model.population.request.Country;
 import dev.syorito_hatsuki.country_service.api.service.CountriesService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,11 +13,8 @@ import java.io.IOException;
 @RestController
 public class CountriesController {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(CountriesController.class);
-
     /*   Tried @Autowired but not work   */
     private final CountriesService service = new CountriesService();
-
 
     /*   COMPLETED   */
     @GetMapping("countries")
