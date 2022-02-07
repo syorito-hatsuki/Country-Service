@@ -7,11 +7,11 @@ Clone repository
 git clone https://github.com/syorito-hatsuki/Country-Service.git
 ```
 Open project in IntelliJ IDEA. In right panel select 
-```s
+```js
 Maven -> Country Service -> Plugins -> jar -> jar:jar
 ```
 or open repository folder in terminal and write
-```
+```sh
 ./mvnw jar:jar
 ```
 after that you can found jar file in `$PROJECT_DIR/target/country_service-0.0.1-SNAPSHOT.jar`
