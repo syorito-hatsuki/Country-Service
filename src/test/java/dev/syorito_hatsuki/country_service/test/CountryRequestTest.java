@@ -1,6 +1,6 @@
 package dev.syorito_hatsuki.country_service.test;
 
-import dev.syorito_hatsuki.country_service.countries.controller.CountriesController;
+import dev.syorito_hatsuki.country_service.controller.CountriesController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
