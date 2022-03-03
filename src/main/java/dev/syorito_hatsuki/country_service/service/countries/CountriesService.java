@@ -1,4 +1,4 @@
-package dev.syorito_hatsuki.country_service.api.service.countries;
+package dev.syorito_hatsuki.country_service.service.countries;
 
 import dev.syorito_hatsuki.country_service.api.model.countries.response.Countries;
 import dev.syorito_hatsuki.country_service.api.model.countries.response.CountryInfo;

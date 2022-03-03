@@ -1,4 +1,4 @@
-package dev.syorito_hatsuki.country_service.api.model.population.request;
+package dev.syorito_hatsuki.country_service.dto.population.request;
 
 public class Country {
 

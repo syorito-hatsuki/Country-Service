@@ -1,4 +1,4 @@
-package dev.syorito_hatsuki.country_service.api.model.country_code.response;
+package dev.syorito_hatsuki.country_service.dto.country_code.response;
 
 public class CountryCodeData {
     private final String name;

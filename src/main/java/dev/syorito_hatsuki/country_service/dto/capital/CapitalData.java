@@ -1,14 +1,14 @@
-package dev.syorito_hatsuki.country_service.api.model.flag.response;
+package dev.syorito_hatsuki.country_service.dto.capital;
 
-public class FlagData {
+public class CapitalData {
     private final String name;
-    private final String flag;
+    private final String capital;
     private final String iso2;
     private final String iso3;
 
-    public FlagData(String name, String flag, String iso2, String iso3) {
+    public CapitalData(String name, String capital, String iso2, String iso3) {
         this.name = name;
-        this.flag = flag;
+        this.capital = capital;
         this.iso2 = iso2;
         this.iso3 = iso3;
     }
@@ -21,8 +21,8 @@ public class FlagData {
         return iso2;
     }
 
-    public String getFlag() {
-        return flag;
+    public String getCapital() {
+        return capital;
     }
 
     public String getName() {

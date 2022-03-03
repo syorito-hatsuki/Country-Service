@@ -1,4 +1,4 @@
-package dev.syorito_hatsuki.country_service.api.model.population.responce;
+package dev.syorito_hatsuki.country_service.dto.population.responce;
 
 public class Population {
     private final PopulationData data;

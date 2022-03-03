@@ -1,11 +1,11 @@
-package dev.syorito_hatsuki.country_service.api.model.capital;
+package dev.syorito_hatsuki.country_service.dto.flag.response;
 
-public class Capital {
+public class Flag {
     private final String error;
     private final String msg;
-    private final CapitalData data;
+    private final FlagData data;
 
-    public Capital(String error, String msg, CapitalData data) {
+    public Flag(String error, String msg, FlagData data) {
         this.error = error;
         this.msg = msg;
         this.data = data;
@@ -19,7 +19,7 @@ public class Capital {
         return msg;
     }
 
-    public CapitalData getData() {
+    public FlagData getData() {
         return data;
     }
 }

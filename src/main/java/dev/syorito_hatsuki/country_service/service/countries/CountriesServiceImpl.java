@@ -1,8 +1,8 @@
-package dev.syorito_hatsuki.country_service.api.service.countries;
+package dev.syorito_hatsuki.country_service.service.countries;
 
 import dev.syorito_hatsuki.country_service.api.model.countries.response.Countries;
 import dev.syorito_hatsuki.country_service.api.model.countries.response.CountryInfo;
-import dev.syorito_hatsuki.country_service.api.repository.CountriesNowRepository;
+import dev.syorito_hatsuki.country_service.repository.CountriesNowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

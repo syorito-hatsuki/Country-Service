@@ -1,7 +1,7 @@
 package dev.syorito_hatsuki.country_service.controller;
 
 import dev.syorito_hatsuki.country_service.api.model.countries.response.Countries;
-import dev.syorito_hatsuki.country_service.api.service.countries.CountriesService;
+import dev.syorito_hatsuki.country_service.service.countries.CountriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

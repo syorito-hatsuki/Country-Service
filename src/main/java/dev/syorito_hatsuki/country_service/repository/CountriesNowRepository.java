@@ -1,11 +1,11 @@
-package dev.syorito_hatsuki.country_service.api.repository;
+package dev.syorito_hatsuki.country_service.repository;
 
 import dev.syorito_hatsuki.country_service.api.model.capital.Capital;
 import dev.syorito_hatsuki.country_service.api.model.countries.response.Countries;
-import dev.syorito_hatsuki.country_service.api.model.country_code.response.CountryCode;
-import dev.syorito_hatsuki.country_service.api.model.flag.response.Flag;
-import dev.syorito_hatsuki.country_service.api.model.population.request.Country;
-import dev.syorito_hatsuki.country_service.api.model.population.responce.Population;
+import dev.syorito_hatsuki.country_service.dto.country_code.response.CountryCode;
+import dev.syorito_hatsuki.country_service.dto.flag.response.Flag;
+import dev.syorito_hatsuki.country_service.dto.population.request.Country;
+import dev.syorito_hatsuki.country_service.dto.population.responce.Population;
 import org.springframework.web.bind.annotation.RequestBody;
 
 public interface CountriesNowRepository {

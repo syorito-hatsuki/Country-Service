@@ -1,11 +1,11 @@
-package dev.syorito_hatsuki.country_service.api.model.country_code.response;
+package dev.syorito_hatsuki.country_service.dto.capital;
 
-public class CountryCode {
+public class Capital {
     private final String error;
     private final String msg;
-    private final CountryCodeData data;
+    private final CapitalData data;
 
-    public CountryCode(String error, String msg, CountryCodeData data) {
+    public Capital(String error, String msg, CapitalData data) {
         this.error = error;
         this.msg = msg;
         this.data = data;
@@ -19,7 +19,7 @@ public class CountryCode {
         return msg;
     }
 
-    public CountryCodeData getData() {
+    public CapitalData getData() {
         return data;
     }
 }

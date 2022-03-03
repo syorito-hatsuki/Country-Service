@@ -1,11 +1,11 @@
-package dev.syorito_hatsuki.country_service.api.model.flag.response;
+package dev.syorito_hatsuki.country_service.dto.country_code.response;
 
-public class Flag {
+public class CountryCode {
     private final String error;
     private final String msg;
-    private final FlagData data;
+    private final CountryCodeData data;
 
-    public Flag(String error, String msg, FlagData data) {
+    public CountryCode(String error, String msg, CountryCodeData data) {
         this.error = error;
         this.msg = msg;
         this.data = data;
@@ -19,7 +19,7 @@ public class Flag {
         return msg;
     }
 
-    public FlagData getData() {
+    public CountryCodeData getData() {
         return data;
     }
 }
