@@ -1,32 +1,30 @@
 package dev.syorito_hatsuki.country_service.test;
 
-import dev.syorito_hatsuki.country_service.countries.controller.CountriesController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.MediaType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.Is.isA;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.isA;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * Tried to add object validation, but not understand how :(
- * I tried use isA(<Object>)
- */
+@SpringBootTest
+@AutoConfigureMockMvc
 public class CountryRequestTest {
 
-    private final MockMvc mockMvc
-            = MockMvcBuilders.standaloneSetup(new CountriesController()).build();
+    @Autowired
+    private MockMvc mockMvc;
 
     @Test
     @DisplayName("/countries request test")
     void testCountriesGetRequest() throws Exception {
         mockMvc.perform(get("/countries"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.*").isArray());
     }
 
@@ -35,7 +33,6 @@ public class CountryRequestTest {
     void testCountryInfoByName() throws Exception {
         mockMvc.perform(get("/countries/Finland"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name", is("Finland")))
                 .andExpect(jsonPath("$.country_code", is("FI")))
                 .andExpect(jsonPath("$.capital", is("Helsinki")))
