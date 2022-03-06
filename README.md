@@ -14,7 +14,7 @@ or open repository folder in terminal and write
 ```sh
 ./mvnw jar:jar
 ```
-after that you can found jar file in `$PROJECT_DIR/target/country_service-0.0.1-SNAPSHOT.jar`
+after that you can found jar file in `$PROJECT_DIR/target/country_service-1.0.0.jar`
 
 ## Alternative
-You can also download already builded JAR file -> [Click me :3](https://github.com/syorito-hatsuki/Country-Service/blob/master/country_service-0.0.1-SNAPSHOT.jar?raw=true)
+You can also download already builded JAR file -> [Click me :3](https://github.com/syorito-hatsuki/Country-Service/blob/master/country_service-1.0.0.jar?raw=true)
