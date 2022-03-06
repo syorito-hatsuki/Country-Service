@@ -9,7 +9,7 @@
     </parent>
     <groupId>dev.syorito_hatsuki</groupId>
     <artifactId>country_service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Country Service</name>
     <description>Demo project for Nordea</description>
     <properties>
@@ -84,6 +84,14 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>dev.syorito_hatsuki.country_service.CountryServiceApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,7 +1,7 @@
 package dev.syorito_hatsuki.country_service.service.countries;
 
-import dev.syorito_hatsuki.country_service.api.model.countries.response.Countries;
-import dev.syorito_hatsuki.country_service.api.model.countries.response.CountryInfo;
+import dev.syorito_hatsuki.country_service.dto.CountryInfo;
+import dev.syorito_hatsuki.country_service.dto.countries.Countries;
 
 public interface CountriesService {
 
