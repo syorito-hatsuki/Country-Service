@@ -109,7 +109,7 @@ Implement a microservice which provides a list of countries and, in addition, pr
 
 ### Prerequisites
 
-Install java 17 or newer. Select correct away for our system
+Install java 17 or newer. Select the correct way for your system
 |OS|Download Away|
 |-|-|
 |Windows|https://adoptium.net/temurin/releases/|
