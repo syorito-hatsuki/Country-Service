@@ -1,6 +1,5 @@
 package dev.syorito_hatsuki.country_service.domain.repository;
 
-import dev.syorito_hatsuki.country_service.domain.repository.model.Country;
 import dev.syorito_hatsuki.country_service.domain.repository.model.capital.Capital;
 import dev.syorito_hatsuki.country_service.domain.repository.model.countries.Countries;
 import dev.syorito_hatsuki.country_service.domain.repository.model.country_code.CountryCode;
@@ -11,11 +10,11 @@ public interface CountriesNowRepository {
 
     Countries getCountries();
 
-    Population getPopulation(Country country);
+    Population getPopulation(String countryName);
 
-    Flag getFlag(Country country);
+    Flag getFlag(String countryName);
 
-    Capital getCapital(Country country);
+    Capital getCapital(String countryName);
 
-    CountryCode getCountryCode(Country country);
+    CountryCode getCountryCode(String countryName);
 }

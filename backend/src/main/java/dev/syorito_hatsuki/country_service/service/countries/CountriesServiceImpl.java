@@ -1,7 +1,6 @@
 package dev.syorito_hatsuki.country_service.service.countries;
 
 import dev.syorito_hatsuki.country_service.domain.repository.CountriesNowRepository;
-import dev.syorito_hatsuki.country_service.domain.repository.model.Country;
 import dev.syorito_hatsuki.country_service.dto.CountryInfo;
 import dev.syorito_hatsuki.country_service.dto.countries.Countries;
 import dev.syorito_hatsuki.country_service.dto.countries.CountriesData;
@@ -25,14 +24,13 @@ public class CountriesServiceImpl implements CountriesService {
     }
 
     @Override
-    public CountryInfo getCountryInfoByName(String name) {
-        var country = new Country(name);
+    public CountryInfo getCountryInfoByName(String countryName) {
         return new CountryInfo(
-                country.getCountry(),
-                countriesNowRepository.getCountryCode(country).getData().getIso2(),
-                countriesNowRepository.getCapital(country).getData().getCapital(),
-                countriesNowRepository.getPopulation(country).getData().getLatestPopulation(),
-                countriesNowRepository.getFlag(country).getData().getFlag()
+                countryName,
+                countriesNowRepository.getCountryCode(countryName).getData().getIso2(),
+                countriesNowRepository.getCapital(countryName).getData().getCapital(),
+                countriesNowRepository.getPopulation(countryName).getData().getLatestPopulation(),
+                countriesNowRepository.getFlag(countryName).getData().getFlag()
         );
     }
 }

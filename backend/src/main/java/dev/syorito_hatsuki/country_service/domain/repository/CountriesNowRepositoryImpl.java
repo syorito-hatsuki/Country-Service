@@ -1,6 +1,5 @@
 package dev.syorito_hatsuki.country_service.domain.repository;
 
-import dev.syorito_hatsuki.country_service.domain.repository.model.Country;
 import dev.syorito_hatsuki.country_service.domain.repository.model.capital.Capital;
 import dev.syorito_hatsuki.country_service.domain.repository.model.countries.Countries;
 import dev.syorito_hatsuki.country_service.domain.repository.model.country_code.CountryCode;
@@ -20,6 +19,7 @@ public class CountriesNowRepositoryImpl implements CountriesNowRepository {
         this.client = WebClient.builder()
                 .baseUrl("https://countriesnow.space/api/v0.1/countries/")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .defaultHeader(HttpHeaders.USER_AGENT, "dev.syorito_hatsuki.country_service")
                 .build();
     }
 
@@ -33,40 +33,36 @@ public class CountriesNowRepositoryImpl implements CountriesNowRepository {
     }
 
     @Override
-    public Population getPopulation(Country country) {
-        return client.post()
-                .uri("population")
-                .bodyValue(country)
+    public Population getPopulation(String countryName) {
+        return client.get()
+                .uri("population/q?country=" + countryName)
                 .retrieve()
                 .bodyToMono(Population.class)
                 .block();
     }
 
     @Override
-    public Flag getFlag(Country country) {
-        return client.post()
-                .uri("flag/images")
-                .bodyValue(country)
+    public Flag getFlag(String countryName) {
+        return client.get()
+                .uri("flag/images/q?country=" + countryName)
                 .retrieve()
                 .bodyToMono(Flag.class)
                 .block();
     }
 
     @Override
-    public Capital getCapital(Country country) {
-        return client.post()
-                .uri("capital")
-                .bodyValue(country)
+    public Capital getCapital(String countryName) {
+        return client.get()
+                .uri("capital/q?country=" + countryName)
                 .retrieve()
                 .bodyToMono(Capital.class)
                 .block();
     }
 
     @Override
-    public CountryCode getCountryCode(Country country) {
-        return client.post()
-                .uri("iso")
-                .bodyValue(country)
+    public CountryCode getCountryCode(String countryName) {
+        return client.get()
+                .uri("iso/q?country=" + countryName)
                 .retrieve()
                 .bodyToMono(CountryCode.class)
                 .block();
