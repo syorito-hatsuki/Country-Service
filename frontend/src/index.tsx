@@ -18,7 +18,6 @@ ReactDOM.createRoot(
                     createRoutesFromElements(
                         <Route path="/" element={<App/>}>
                             <Route index element={<CountriesPage/>}/>
-
                             <Route path="*" element={<NotFoundPage/>}/>
                         </Route>
                     )
