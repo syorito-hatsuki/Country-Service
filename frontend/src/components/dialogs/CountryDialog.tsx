@@ -1,10 +1,11 @@
-import {Card, CardContent, CardMedia, CircularProgress, Dialog, DialogTitle, Typography} from "@mui/material";
+import {Card, CardContent, CircularProgress, Dialog, DialogTitle, Typography} from "@mui/material";
 import React from "react";
 import {useQuery} from "@tanstack/react-query";
 import ErrorView from "../ErrorView";
 import Grid from "@mui/material/Unstable_Grid2";
 import Country from "../../dto/Country";
 import ErrorResponse from "../../dto/ErrorResponse";
+import CardWithFallbackImage from "../CardWithFallbackImage";
 
 export interface DialogProps {
     countryName: string
@@ -50,12 +51,7 @@ export default function CountryDialog(props: DialogProps) {
         <Dialog open={open} onClose={onClose}>
             <DialogTitle>{countryName}</DialogTitle>
             <Card sx={{maxWidth: 345}}>
-                <CardMedia
-                    component="img"
-                    sx={{height: 140}}
-                    image={data.flag_file_url}
-                    title={data.name}
-                />
+                <CardWithFallbackImage imageUrl={data.flag_file_url} imageTitle={data.name}/>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {data.name} ({data.country_code})
