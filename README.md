@@ -23,6 +23,8 @@
   </p>
 </div>
 
+![Banner](./assets/dialog.png)
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -33,13 +35,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -51,7 +47,9 @@
 This project for me was a test task at Nordea for the Junior Backend position.
 
 ### Task
-Implement a microservice which provides a list of countries and, in addition, provides more detailed information per country.
+
+Implement a microservice which provides a list of countries and, in addition, provides more detailed information per
+country.
 
 1. Use spring-boot
 2. Use maven
@@ -64,76 +62,129 @@ Implement a microservice which provides a list of countries and, in addition, pr
 ```json
 {
   "countries": [
-		{
-			"name": "Finland",
-			"country_code": "FI"
-		}
-	]
+    {
+      "name": "Finland",
+      "country_code": "FI"
+    }
+  ]
 }
 ```
+
 </details>
 
 <details>
   <summary>GET /countries/{name}</summary>
-	
+
 ```json
 {
-	"name": "Finland",
-	"country_code": "FI",
-	"capital": "Helsinki",
-	"population": 5491817,
-	"flag_file_url": "<url to the flag file>"
+  "name": "Finland",
+  "country_code": "FI",
+  "capital": "Helsinki",
+  "population": 5491817,
+  "flag_file_url": "<url to the flag file>"
 }
 ```
+
 </details>
 
 5. Country service must fetch the relevant information for countries from some other service
-	- You could use for example the following service: https://countriesnow.space/
+    - You could use for example the following service: https://countriesnow.space/
 6. Test the implementation as well as it's needed from your perspective
 7. All the implementations must be runnable locally with our own computer. Write needed instructions to README.md file.
-8. Publish all sources code and relevant files in github or similar service and send the link to the repo so that the implementation can be reviewed.
+8. Publish all sources code and relevant files in github or similar service and send the link to the repo so that the
+   implementation can be reviewed.
 
 - You get bonus points if:
-	- you use and understand reactor (https://www.baeldung.com/reactor-core)
-	- you create a separate wep application which utilizes the created REST API and shows the relevant country information in a browser
-	
+    - you use and understand reactor (https://www.baeldung.com/reactor-core)
+    - you create a separate wep application which utilizes the created REST API and shows the relevant country
+      information in a browser
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-- [![Apache-Maven][Apache-Maven]][Apache-Maven-url] 
+
+- [![Apache-Maven][Apache-Maven]][Apache-Maven-url]
 - [![Spring-Boot][Spring-Boot]][Spring-Boot-url]
+- [![React][React]][React-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
+Clone the repo
+
+```sh
+git clone https://github.com/syorito-hatsuki/Country-Service.git
+```
+
+<details>
+    <summary>Back-end</summary>
+
 ### Prerequisites
 
 Install java 17 or newer. Select the correct way for your system
-|OS|Download Away|
-|-|-|
-|Windows|https://adoptium.net/temurin/releases/|
-|Ubuntu|`sudo apt install openjdk-17-jre`|
-|Arch Linux|`sudo pacman -S jre-openjdk`|
+
+| OS         | Download Away                          |
+|------------|----------------------------------------|
+| Windows    | https://adoptium.net/temurin/releases/ |
+| Ubuntu     | `sudo apt install openjdk-17-jre`      |
+| Arch Linux | `sudo pacman -S jre-openjdk`           |
 
 ### Installation
-1. Clone the repo
-   ```sh
-   git clone https://github.com/syorito-hatsuki/Country-Service.git
-   ```
+
+1. Open folder backend
+    ```sh
+    cd ./backend
+    ```
+
 2. Build JAR using maven
-   ```sh
-   ./mvnw jar:jar
-   ```
+    ```sh
+    ./mvnw jar:jar
+    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Usage
+### Usage
 
 1. Run JAR file
-   ```sh
-   java -jar country_service-1.0.0.jar
-   ```
+    ```sh
+    java -jar country_service-2.0.0.jar
+    ```
+
+</details>
+
+<details>
+    <summary>Front-end</summary>
+
+### Prerequisites
+
+Install NodeJS. Select the correct way for your system
+
+| OS         | Download Away                  |
+|------------|--------------------------------|
+| Windows    | https://nodejs.org/en/download |
+| Ubuntu     | `sudo apt install nodejs npm`  |
+| Arch Linux | `sudo pacman -S nodejs npm`    |
+
+### Installation
+
+1. Open folder backend
+    ```sh
+    cd ./frontend
+    ```
+
+2. Install dependencies
+    ```sh
+    npm install
+    ```
+
+### Usage
+
+1. Run Node app
+    ```sh
+    npm run start
+    ```
+
+</details>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
@@ -151,18 +202,37 @@ Project Link: [https://github.com/syorito-hatsuki/Country-Service](https://githu
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/syorito-hatsuki/Country-Service.svg?style=for-the-badge
+
 [contributors-url]: https://github.com/syorito-hatsuki/Country-Service/graphs/contributors
+
 [forks-shield]: https://img.shields.io/github/forks/syorito-hatsuki/Country-Service.svg?style=for-the-badge
+
 [forks-url]: https://github.com/syorito-hatsuki/Country-Service/network/members
+
 [stars-shield]: https://img.shields.io/github/stars/syorito-hatsuki/Country-Service.svg?style=for-the-badge
+
 [stars-url]: https://github.com/syorito-hatsuki/Country-Service/stargazers
+
 [issues-shield]: https://img.shields.io/github/issues/syorito-hatsuki/Country-Service.svg?style=for-the-badge
+
 [issues-url]: https://github.com/syorito-hatsuki/Country-Service/issues
+
 [license-shield]: https://img.shields.io/github/license/syorito-hatsuki/Country-Service.svg?style=for-the-badge
+
 [license-url]: https://github.com/syorito-hatsuki/Country-Service/blob/master/LICENSE.txt
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
 [linkedin-url]: https://www.linkedin.com/in/kit-lehto/
+
 [Apache-Maven]: https://img.shields.io/badge/apache%20maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white
+
 [Apache-Maven-url]: https://maven.apache.org/
+
 [Spring-Boot]: https://img.shields.io/badge/spring%20boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
+
 [Spring-Boot-url]: https://spring.io/
+
+[React]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white
+
+[React-url]: https://react.dev
