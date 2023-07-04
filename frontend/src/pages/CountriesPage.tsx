@@ -4,7 +4,7 @@ import {Countries} from "../dto/Countries";
 import React, {useState} from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import CountryDialog from "../components/dialogs/CountryDialog";
-import Error from "../components/Error";
+import ErrorView from "../components/ErrorView";
 
 export default function CountriesPage() {
 
@@ -26,7 +26,11 @@ export default function CountriesPage() {
             .then<Countries>(data => data.json())
     })
 
-    if (status === 'error') return (<Error message={(error as Error).message}/>)
+    if (status === 'error') return (
+        <Grid container justifyContent="center" spacing={2} paddingY={4}>
+            <ErrorView message={(error as Error).message}/>
+        </Grid>
+    )
 
     if (status === 'loading') return (
         <Grid container justifyContent="center" spacing={2} paddingY={4}>

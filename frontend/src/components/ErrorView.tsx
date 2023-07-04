@@ -6,9 +6,9 @@ interface ErrorMessage {
     message: string
 }
 
-export default function Error(props: ErrorMessage) {
+export default function ErrorView(props: ErrorMessage) {
     return (
-        <Grid container justifyContent="center" spacing={2} paddingY={4}>
+        <Grid container margin={4}>
             <Typography variant="h2">
                 {`Error: ${props.message}`}
             </Typography>

@@ -1,9 +1,10 @@
 import {Card, CardContent, CardMedia, CircularProgress, Dialog, DialogTitle, Typography} from "@mui/material";
 import React from "react";
 import {useQuery} from "@tanstack/react-query";
-import Error from "../Error";
+import ErrorView from "../ErrorView";
 import Grid from "@mui/material/Unstable_Grid2";
 import Country from "../../dto/Country";
+import ErrorResponse from "../../dto/ErrorResponse";
 
 export interface DialogProps {
     countryName: string
@@ -17,13 +18,13 @@ export default function CountryDialog(props: DialogProps) {
     const {data, status, error} = useQuery({
         queryKey: ['getCountryByName', countryName],
         queryFn: () => fetch(`http://localhost:8080/countries/${countryName}`)
-            .then<Country>(data => data.json())
+            .then<Country | ErrorResponse>(data => data.json())
     })
 
     if (status === 'error') return (
         <Dialog open={open} onClose={onClose}>
             <DialogTitle>{countryName}</DialogTitle>
-            <Error message={(error as Error).message}/>
+            <ErrorView message={(error as Error).message}/>
         </Dialog>
     )
 
@@ -35,6 +36,15 @@ export default function CountryDialog(props: DialogProps) {
             </Grid>
         </Dialog>
     )
+
+    if (typeof data === 'object' && 'message' in data) {
+        if (data.code === 404) data.message = "Information not found for selected country"
+        return (
+            <Dialog open={open} onClose={onClose}>
+                <ErrorView message={data.message}/>
+            </Dialog>
+        )
+    }
 
     return (
         <Dialog open={open} onClose={onClose}>
