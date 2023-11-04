@@ -11,7 +11,18 @@ repositories {
 }
 
 dependencies {
+    val ktorVersion: String by project
+    implementation("io.ktor", "ktor-server-core", ktorVersion)
+    implementation("io.ktor", "ktor-server-netty", ktorVersion)
+    implementation("io.ktor", "ktor-server-content-negotiation", ktorVersion)
+    implementation("io.ktor", "ktor-serialization-kotlinx-json", ktorVersion)
+
+    val logbackVersion: String by project
+    implementation("ch.qos.logback","logback-classic", logbackVersion)
+
     testImplementation(kotlin("test"))
+    testImplementation("io.ktor", "ktor-server-test-host", ktorVersion)
+    testImplementation("org.jetbrains.kotlin", "kotlin-test-junit", "1.9.0")
 }
 
 tasks.test {
@@ -19,7 +30,7 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(19)
 }
 
 application {
