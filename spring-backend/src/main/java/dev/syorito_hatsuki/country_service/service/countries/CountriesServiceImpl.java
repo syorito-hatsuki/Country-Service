@@ -12,8 +12,11 @@ import java.util.ArrayList;
 @Service
 public class CountriesServiceImpl implements CountriesService {
 
-    @Autowired
-    CountriesNowRepository countriesNowRepository;
+    final CountriesNowRepository countriesNowRepository;
+
+    public CountriesServiceImpl(CountriesNowRepository countriesNowRepository) {
+        this.countriesNowRepository = countriesNowRepository;
+    }
 
     @Override
     public Countries getCountries() {
