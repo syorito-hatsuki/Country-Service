@@ -19,7 +19,7 @@ object CountriesNowAPI {
             })
         }
         defaultRequest {
-            url("https://countriesnow.space/api/v0.1/countries")
+            url("https://countriesnow.space/api/v0.1/countries/")
             userAgent("dev.syorito_hatsuki.country_service")
             contentType(ContentType.Application.Json)
         }
