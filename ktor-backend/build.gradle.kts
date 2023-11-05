@@ -25,7 +25,7 @@ dependencies {
 
     testImplementation("org.jetbrains.kotlin", "kotlin-test", "1.8.10")
     testImplementation("io.ktor", "ktor-server-test-host", ktorVersion)
-    testImplementation("org.jetbrains.kotlin", "kotlin-test-junit", "1.9.0")
+    testImplementation("org.jetbrains.kotlin", "kotlin-test-junit5", "1.9.0")
 
     // CLIENT KTOR
     implementation("io.ktor", "ktor-client-core", ktorVersion)
