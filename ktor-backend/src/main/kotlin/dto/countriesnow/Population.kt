@@ -27,7 +27,7 @@ data class Population(
         @Serializable
         data class PopulationCount(
             @SerialName("value")
-            val value: Int,
+            val value: Long,
             @SerialName("year")
             val year: Int
         )
