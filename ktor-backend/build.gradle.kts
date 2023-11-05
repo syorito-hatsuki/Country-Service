@@ -17,6 +17,7 @@ dependencies {
     implementation("io.ktor", "ktor-server-netty", ktorVersion)
     implementation("io.ktor", "ktor-server-content-negotiation", ktorVersion)
     implementation("io.ktor", "ktor-serialization-kotlinx-json", ktorVersion)
+    implementation("io.ktor", "ktor-server-cors", ktorVersion)
 
     val logbackVersion: String by project
     implementation("ch.qos.logback","logback-classic", logbackVersion)
