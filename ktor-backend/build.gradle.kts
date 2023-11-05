@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    // SERVER KTOR
     val ktorVersion: String by project
     implementation("io.ktor", "ktor-server-core", ktorVersion)
     implementation("io.ktor", "ktor-server-netty", ktorVersion)
@@ -20,9 +21,9 @@ dependencies {
     implementation("io.ktor", "ktor-server-cors", ktorVersion)
 
     val logbackVersion: String by project
-    implementation("ch.qos.logback","logback-classic", logbackVersion)
+    implementation("ch.qos.logback", "logback-classic", logbackVersion)
 
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin", "kotlin-test", "1.8.10")
     testImplementation("io.ktor", "ktor-server-test-host", ktorVersion)
     testImplementation("org.jetbrains.kotlin", "kotlin-test-junit", "1.9.0")
 
